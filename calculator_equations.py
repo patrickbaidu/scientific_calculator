@@ -24,3 +24,10 @@ class Parentheses(SimpleEquation):
     
     def prioritize(self):
         pass
+
+class SaveResult:
+    
+    def number_history(self):
+        pass
+    
+    
