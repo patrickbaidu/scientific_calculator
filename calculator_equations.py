@@ -14,6 +14,18 @@ class Number:
     def __init__(self, input_number):
         self.input_number = input_number
     
+    def string_to_integer(self, list_of_equation):
+        number_list = []
+        for number in list_of_equation:
+            if isinstance(number, int): 
+                number = int(number)
+                number_list.append(number)
+            else:
+                continue
+        return number_list
+    
+    def append_operands(self, list_of_equation):
+    
 class SimpleEquation(Number):
 
     def __init__(self):
