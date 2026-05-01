@@ -1,3 +1,14 @@
+import math
+
+class InputEquation:
+    
+    def __init__(self, user_input):
+        self.user_input = user_input
+        
+    def make_into_list(self):
+        equation_list = self.user_input.split()
+        return equation_list
+
 class Number:
     
     def __init__(self, input_number):
