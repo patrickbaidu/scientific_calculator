@@ -25,6 +25,13 @@ class Number:
         return number_list
     
     def append_operands(self, list_of_equation):
+        equation_list = []
+        for character in list_of_equation:
+            if character.isalnum() and not character.isspace():
+                equation_list.append(character)
+            else:
+                continue
+        return equation_list
     
 class SimpleEquation(Number):
 
