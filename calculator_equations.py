@@ -9,14 +9,14 @@ class InputEquation:
         equation_list = self.user_input.split()
         return equation_list
 
-class Number:
+class Number(InputEquation):
     
     def __init__(self, input_number):
         self.input_number = input_number
     
-    def string_to_integer(self, list_of_equation):
+    def string_to_integer(self):
         number_list = []
-        for number in list_of_equation:
+        for number in self.input_number:
             if isinstance(number, int): 
                 number = int(number)
                 number_list.append(number)
@@ -24,36 +24,31 @@ class Number:
                 continue
         return number_list
     
-    def append_operands(self, list_of_equation):
-        equation_list = []
-        for character in list_of_equation:
+    def append_operands(self):
+        operands_list = []
+        for character in self.input_number:
             if character.isalnum() and not character.isspace():
-                equation_list.append(character)
+                operands_list.append(character)
             else:
                 continue
-        return equation_list
+        return operands_list
     
-class SimpleEquation(Number):
+class EquationLine(Number):
 
-    def __init__(self):
-        pass
+    def __init__(self, line_of_equation):
+        self.line_of_equation = line_of_equation
     
-    def addition(self, number_input):
-        pass
+    def combine_equation(self, number_list, operands_list):
+        for number in number_list:
+            index_of_number = self.line_of_equation.index(number)
     
-    def subtraction(self, number_input):
-        pass
+    def equation_line(self):
+        try:
+            pass
+        except ValueError as e:
+            pass
     
-    def multiplication(self, number_input):
-        pass
-    
-    def division(self, number_input):
-        pass
-    
-class Parentheses(SimpleEquation):
-    
-    def prioritize(self):
-        pass
+    def 
 
 class SaveResult:
     
