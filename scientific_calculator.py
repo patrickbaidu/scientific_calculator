@@ -6,11 +6,22 @@
 # I will have a saved result for my variable whenever an equation is done.
 # I will have a second user input to know if the user still wants to continue the program or not.
 
-from calculator_equations import Number, SimpleEquation, Parentheses, SaveResult
+from calculator_equations import InputEquation
+from calculator_equations import ProperOperands
+from calculator_equations import EvaluateEquation
 
-user_input = input("Enter Equation Here: ")
+user_input = input("Enter Equation Here >>> ")
 
 try:
-    pass
+    user_input = InputEquation(user_input)
+    clean_spaces = user_input.clean_spaces()
+    equation = user_input.equation_list(clean_spaces)
+    proper_equation = ProperOperands(equation)
+    proper_equation = proper_equation.proper_operator()
+    equation = EvaluateEquation(proper_equation)
+    result = equation.evaluate_equation()
+    
+    print(result)
+    
 except ValueError as e:
     pass
