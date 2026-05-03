@@ -23,5 +23,5 @@ try:
     
     print(result)
     
-except ValueError as e:
-    pass
+except:
+    print("Error")
