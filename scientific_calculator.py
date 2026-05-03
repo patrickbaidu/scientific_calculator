@@ -19,9 +19,10 @@ try:
     proper_equation = ProperOperands(equation)
     proper_equation = proper_equation.proper_operator()
     equation = EvaluateEquation(proper_equation)
-    result = equation.evaluate_equation()
+    result, rounded_result = equation.evaluate_equation()
     
     print(result)
+    print(rounded_result)
     
 except:
     print("Error")
