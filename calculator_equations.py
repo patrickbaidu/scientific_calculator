@@ -48,7 +48,7 @@ class EvaluateEquation:
             if re.search(r'[\+\-\/]{2,}', self.equation):
                 return "Error: Multiple Operators"
             result = eval(self.equation)
-            result = round(result, 2)
+            result = round(result, 3)
             return result
         except ZeroDivisionError:
             return "Error: Divided By Zero."
