@@ -29,7 +29,6 @@ class ProperOperands:
         self.equation = re.sub(r'\)(\d)', r')*\1', self.equation)
         self.equation = re.sub(r'(\d)\(', r'\1*(', self.equation)
         self.equation = re.sub(r'([a-zA-Z])\(', r'\1*(', self.equation)
-        
         return self.equation
 
 class EvaluateEquation:
@@ -39,6 +38,8 @@ class EvaluateEquation:
     
     def evaluate_equation(self):
         try:
+            if re.search(r'[\+\-\*\/]{2,}', self.equation):
+                return "Error: Multiple Operators"
             result = eval(self.equation)
             return result
         except ZeroDivisionError:
