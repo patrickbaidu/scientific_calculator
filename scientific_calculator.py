@@ -12,17 +12,17 @@ from calculator_equations import EvaluateEquation
 
 user_input = input("Enter Equation Here >>> ")
 
-try:
-    user_input = InputEquation(user_input)
-    clean_spaces = user_input.clean_spaces()
-    equation = user_input.equation_list(clean_spaces)
-    proper_equation = ProperOperands(equation)
-    proper_equation = proper_equation.proper_operator()
-    equation = EvaluateEquation(proper_equation)
-    result, rounded_result = equation.evaluate_equation()
-    
+user_input = InputEquation(user_input)
+clean_spaces = user_input.clean_spaces()
+equation = user_input.equation_list(clean_spaces)
+proper_equation = ProperOperands(equation)
+proper_equation = proper_equation.proper_operator()
+equation = EvaluateEquation(proper_equation)
+result, rounded_result = equation.evaluate_equation()
+
+if result % 1 == 0:
+    print(result)
+else:
     print(result)
     print(rounded_result)
     
-except:
-    print("Error")

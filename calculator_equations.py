@@ -23,11 +23,11 @@ class ProperOperands(InputEquation):
     
     def proper_operator(self):
         if "xx" in self.equation:
-            return
+            return "Invalid"
         elif "XX" in self.equation:
-            return
+            return "Invalid"
         elif "**" in self.equation:
-            return
+            return "Invalid"
         else:
             self.equation = self.equation.replace("x", "*").replace("X", "*")
             self.equation = self.equation.replace(")(", ")*(")
@@ -44,15 +44,19 @@ class EvaluateEquation:
         self.equation = equation
     
     def evaluate_equation(self):
+        
+        if "Invalid" in self.equation:
+            return "Error:", "Cannot Handle Contiguous Multiplication"
+        
         try:
             if re.search(r'[\+\-\/]{2,}', self.equation):
-                return "Error: Multiple Operators"
+                return "Error:", "Contiguous Operators"
             actual_result = eval(self.equation)
             rounded_result = round(actual_result, 3)
             return actual_result, rounded_result
         except ZeroDivisionError:
-            return "Error: Divided By Zero."
+            return "Error:", "Divided By Zero."
         except Exception:
-            return "Invalid Equation"
+            return "Error:", "Invalid Equation"
     
     
