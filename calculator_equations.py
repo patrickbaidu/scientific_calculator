@@ -38,7 +38,12 @@ class EvaluateEquation:
         self.equation = equation
     
     def evaluate_equation(self):
-        evaluate_equation = eval(self.equation)
-        return evaluate_equation
+        try:
+            result = eval(self.equation)
+            return result
+        except ZeroDivisionError:
+            return "Error: Divided By Zero."
+        except Exception:
+            return "Invalid Equation"
     
     
