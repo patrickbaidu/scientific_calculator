@@ -27,10 +27,10 @@ class ProperOperands:
         self.equation = self.equation.replace("^", "**")
         self.equation = re.sub(r'(\d)\(', r'\1*(', self.equation)        
         self.equation = re.sub(r'\)(\d)', r')*\1', self.equation)
+        self.equation = re.sub(r'(\d)\(', r'\1*(', self.equation)
+        self.equation = re.sub(r'([a-zA-Z])\(', r'\1*(', self.equation)
+        
         return self.equation
-
-    
-
 
 class EvaluateEquation:
     
