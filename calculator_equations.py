@@ -58,5 +58,3 @@ class EvaluateEquation:
             return "Error:", "Divided By Zero."
         except Exception:
             return "Error:", "Invalid Equation"
-    
-    
