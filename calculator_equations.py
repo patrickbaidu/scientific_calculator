@@ -50,11 +50,11 @@ class EvaluateEquation:
         
         try:
             if re.search(r'[\+\-\/]{2,}', self.equation):
-                return "Error:", "Contiguous Operators"
+                return "Error: Contiguous Operators", None
             actual_result = eval(self.equation)
             rounded_result = round(actual_result, 3)
             return actual_result, rounded_result
         except ZeroDivisionError:
-            return "Error:", "Divided By Zero."
+            return "Error: Divided By Zero.", None
         except Exception:
-            return "Error:", "Invalid Equation"
+            return "Error: Invalid Equation", None
