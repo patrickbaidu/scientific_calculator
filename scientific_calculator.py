@@ -1,10 +1,11 @@
 from calculator_equations import InputEquation
 from calculator_equations import ProperOperands
 from calculator_equations import EvaluateEquation
+from calculator_equations import Color
 
 while True:
     
-    user_input = input("Enter Equation Here >>> ")
+    user_input = input(f"{Color.yellow + Color.bold}Enter Equation Here >>> {Color.end}")
     
     if user_input == "Break":
         print("Thank You For Using the Program!")
@@ -19,13 +20,16 @@ while True:
         result, rounded_result = equation.evaluate_equation()
 
         if isinstance(result, str):
-                print(result, rounded_result)
+                print(result)
         else:
             try:
                 if result % 1 == 0:
-                    print(result)
+                    result = str(result)
+                    print(f"{Color.green + Color.bold}RESULT: {Color.end}", f"{Color.purple + Color.bold}{result}{Color.end}")
                 else:
-                    print(result)
-                    print(rounded_result)
+                    result = str(result)
+                    rounded_result = str(rounded_result)
+                    print(f"{Color.green + Color.bold}RESULT: {Color.end}", f"{Color.purple + Color.bold}{result}{Color.end}")
+                    print(f"{Color.blue + Color.bold}ROUNDED RESULT: {Color.end}", f"{Color.purple + Color.bold}{rounded_result}{Color.end}")
             except Exception as e:
-                print(f"Invalid Input {e}")
+                print(f"{Color.red + Color.bold}Invalid Input {e}{Color.end}")
