@@ -2,6 +2,16 @@ import re
 import math
 from math import * 
 
+_sin, _cos, _tan = sin, cos, tan
+_asin, _acos, _atan = asin, acos, atan
+
+sin = lambda x: _sin(radians(x))
+cos = lambda x: _cos(radians(x))
+tan = lambda x: _tan(radians(x))
+asin = lambda x: degrees(_asin(x))
+acos = lambda x: degrees(_acos(x))
+atan = lambda x: degrees(_atan(x))
+
 class InputEquation:
     
     def __init__(self, user_input):
