@@ -1,5 +1,6 @@
 import re
 import math
+from math import *
 
 class InputEquation:
     
@@ -37,6 +38,8 @@ class ProperOperands(InputEquation):
             self.equation = re.sub(r'\)(\d)', r')*\1', self.equation)
             self.equation = re.sub(r'(\d)\(', r'\1*(', self.equation)
             self.equation = re.sub(r'([a-zA-Z])\(', r'\1*(', self.equation)
+            self.equation = self.equation.replace("e", str(math.e))
+            self.equation = self.equation.replace("pi", str(math.pi))
             return self.equation
 
 class EvaluateEquation:

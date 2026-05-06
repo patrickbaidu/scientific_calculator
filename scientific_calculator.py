@@ -38,7 +38,7 @@ while True:
         result, rounded_result = equation.evaluate_equation()
 
         if isinstance(result, str):
-                print(result)
+                print("\n", result, "\n")
         else:
             try:
                 if result % 1 == 0:
@@ -50,4 +50,4 @@ while True:
                     print(f"{Color.green + Color.bold}RESULT: {Color.end}", f"{Color.purple + Color.bold}{result}{Color.end}")
                     print(f"{Color.blue + Color.bold}ROUNDED RESULT: {Color.end}", f"{Color.purple + Color.bold}{rounded_result}{Color.end}\n")
             except Exception as e:
-                print(f"{Color.red + Color.bold}Invalid Input {e}{Color.end}")
+                print(f"\n{Color.red + Color.bold}Invalid Input {e}{Color.end}\n")
