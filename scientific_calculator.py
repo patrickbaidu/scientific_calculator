@@ -45,11 +45,11 @@ while True:
             try:
                 if result % 1 == 0:
                     result = str(result)
-                    print(f"\n{Color.green + Color.bold}RESULT: {Color.end}", f"{Color.purple + Color.bold}{result}{Color.end}\n")
+                    print(f"\n😎 {Color.green + Color.bold}RESULT: {Color.end}", f"{Color.purple + Color.bold}{result}{Color.end}\n")
                 else:
                     result = str(result)
                     rounded_result = str(rounded_result)
-                    print(f"\n{Color.green + Color.bold}RESULT: {Color.end}", f"{Color.purple + Color.bold}{result}{Color.end}")
-                    print(f"{Color.blue + Color.bold}ROUNDED RESULT: {Color.end}", f"{Color.purple + Color.bold}{rounded_result}{Color.end}\n")
+                    print(f"\n😎 {Color.green + Color.bold}RESULT: {Color.end}", f"{Color.purple + Color.bold}{result}{Color.end}")
+                    print(f"👍 {Color.blue + Color.bold}ROUNDED RESULT: {Color.end}", f"{Color.purple + Color.bold}{rounded_result}{Color.end}\n")
             except Exception as e:
-                print(f"\n{Color.red + Color.bold}Invalid Input {e}{Color.end}\n")
+                print(f"\n⚠️ {Color.red + Color.bold}Invalid Input {e}{Color.end}\n")
