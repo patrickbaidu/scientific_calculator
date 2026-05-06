@@ -22,11 +22,13 @@ print(f"""
 
 while True:
     
+    print(f"{Color.cyan}━{Color.end}"*60)
     print(f"Enter {Color.red + Color.bold}Quit{Color.end} or {Color.red + Color.bold}Exit{Color.end} to Halt the Program.")
     user_input = input(f"{Color.yellow + Color.bold}Enter Equation Here >>> {Color.end}")
+    print(f"{Color.cyan}━{Color.end}"*60)
     
     if user_input.strip().title() == "Quit" or user_input.strip().title() == "Exit":
-        print(f"{Color.green + Color.bold}Thank You For Using the Program!{Color.end}")
+        print(f"\n{Color.green + Color.bold}THANK YOU FOR USING THIS PROGRAM ^__^!{Color.end}\n")
         break
     else:
         user_input = InputEquation(user_input)
@@ -38,16 +40,16 @@ while True:
         result, rounded_result = equation.evaluate_equation()
 
         if isinstance(result, str):
-                print("\n", result, "\n")
+                print(f"\n{result}", "\n")
         else:
             try:
                 if result % 1 == 0:
                     result = str(result)
-                    print(f"{Color.green + Color.bold}RESULT: {Color.end}", f"{Color.purple + Color.bold}{result}{Color.end}\n")
+                    print(f"\n{Color.green + Color.bold}RESULT: {Color.end}", f"{Color.purple + Color.bold}{result}{Color.end}\n")
                 else:
                     result = str(result)
                     rounded_result = str(rounded_result)
-                    print(f"{Color.green + Color.bold}RESULT: {Color.end}", f"{Color.purple + Color.bold}{result}{Color.end}")
+                    print(f"\n{Color.green + Color.bold}RESULT: {Color.end}", f"{Color.purple + Color.bold}{result}{Color.end}")
                     print(f"{Color.blue + Color.bold}ROUNDED RESULT: {Color.end}", f"{Color.purple + Color.bold}{rounded_result}{Color.end}\n")
             except Exception as e:
                 print(f"\n{Color.red + Color.bold}Invalid Input {e}{Color.end}\n")
