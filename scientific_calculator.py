@@ -12,12 +12,15 @@ while True:
     
     print(f"{Color.cyan}━{Color.end}"*60)
     print(f"Enter {Color.red + Color.bold}Quit{Color.end} or {Color.red + Color.bold}Exit{Color.end} to Halt the Program.")
+    print(f"Enter {Color.green + Color.bold}Menu{Color.end} to Show Options for Operations.")
     user_input = input(f"{Color.yellow + Color.bold}Enter Equation Here >>> {Color.end}")
     print(f"{Color.cyan}━{Color.end}"*60)
     
     if user_input.strip().title() == "Quit" or user_input.strip().title() == "Exit":
         print(f"\n{Color.green + Color.bold}THANK YOU FOR USING THIS PROGRAM ^__^!{Color.end}\n")
         break
+    elif user_input.strip().title() == "Menu":
+        MenuOption.show_options()
     else:
         user_input = InputEquation(user_input)
         clean_spaces = user_input.clean_spaces()
