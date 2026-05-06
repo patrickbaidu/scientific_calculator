@@ -2,23 +2,11 @@ from calculator_equations import InputEquation
 from calculator_equations import ProperOperands
 from calculator_equations import EvaluateEquation
 from calculator_equations import Color
+from calculator_equations import MenuOption
 
 print(f"\n{Color.cyan + Color.bold + Color.underline}{"-"*20}A SCIENTIFIC CALCULATOR{"-"*20}{Color.end}")
 print(f"{Color.bold}OPERATIONS AVAILABLE: [+, -, x, /, ^, sqrt, ln, log, e, pi, sin, cos, tan, arcsin, arccos, arctan]{Color.end}")
-print(f"""
-    {Color.green}Please Use These Symbols Equivalent to the Operations Above: {Color.end}
-    1. {Color.bold}+{Color.end}             : Addition              9. {Color.bold}pi{Color.end}        : Pi Constant
-    2. {Color.bold}-{Color.end}             : Subtraction           10. {Color.bold}sin(x){Color.end}   : Sine Function
-    3. {Color.bold}x or X or *{Color.end}   : Multiplication        11. {Color.bold}cos(x){Color.end}   : Cosine Function
-    4. {Color.bold}/{Color.end}             : Division              12. {Color.bold}tan(x){Color.end}   : Tangent Function
-    5. {Color.bold}^{Color.end}             : Exponent              13. {Color.bold}asin(x){Color.end}  : Inverse Sin Function
-    6. {Color.bold}sqrt(x){Color.end}       : Square Root           14. {Color.bold}acos(x){Color.end}  : Inverse Cosine Function
-    7. {Color.bold}log(x, base){Color.end}  : Logarithm with Base   15. {Color.bold}atan(x){Color.end}  : Inverse Tangent Function
-    8. {Color.bold}e{Color.end}             : Euler's Constant
-    
-    
-    Note: (x) is the number you want to input.
-    """)
+MenuOption.show_options()
 
 while True:
     

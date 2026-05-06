@@ -73,6 +73,25 @@ class EvaluateEquation:
             except Exception:
                 return f"⚠️ {Color.red + Color.bold}Error: Invalid Equation{Color.end}", None
 
+class MenuOption:
+    
+    def show_options():
+        menu_option = print(f"""
+{Color.green}Please Use These Symbols Equivalent to the Operations Above: {Color.end}
+1. {Color.bold}+{Color.end}             : Addition              9.  {Color.bold}pi{Color.end}       : Pi Constant
+2. {Color.bold}-{Color.end}             : Subtraction           10. {Color.bold}sin(x){Color.end}   : Sine Function
+3. {Color.bold}x or X or *{Color.end}   : Multiplication        11. {Color.bold}cos(x){Color.end}   : Cosine Function
+4. {Color.bold}/{Color.end}             : Division              12. {Color.bold}tan(x){Color.end}   : Tangent Function
+5. {Color.bold}^{Color.end}             : Exponent              13. {Color.bold}asin(x){Color.end}  : Inverse Sin Function
+6. {Color.bold}sqrt(x){Color.end}       : Square Root           14. {Color.bold}acos(x){Color.end}  : Inverse Cosine Function
+7. {Color.bold}log(x, base){Color.end}  : Logarithm with Base   15. {Color.bold}atan(x){Color.end}  : Inverse Tangent Function
+8. {Color.bold}e{Color.end}             : Euler's Constant
+
+
+Note: (x) is the number you want to input.
+""")
+        return menu_option
+
 class Color:
     
     purple = '\033[95m'
