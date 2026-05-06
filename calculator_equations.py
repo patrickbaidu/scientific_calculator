@@ -60,18 +60,18 @@ class EvaluateEquation:
     def evaluate_equation(self):
         
         if "Invalid" in self.equation:
-            return f"{Color.red + Color.bold}Error: Cannot Handle Contiguous Multiplication{Color.end}", None
+            return f"⚠️ {Color.red + Color.bold}Error: Cannot Handle Contiguous Multiplication{Color.end}", None
         else:
             try:
                 if re.search(r'[\+\-\/]{2,}', self.equation):
-                    return f"{Color.red + Color.bold}Error: Contiguous Operators{Color.end}", None
+                    return f"⚠️ {Color.red + Color.bold}Error: Contiguous Operators{Color.end}", None
                 actual_result = eval(self.equation)
                 rounded_result = round(actual_result, 3)
                 return actual_result, rounded_result
             except ZeroDivisionError:
-                return f"{Color.red + Color.bold}Error: Divided By Zero.{Color.end}", None
+                return f"⚠️ {Color.red + Color.bold}Error: Divided By Zero.{Color.end}", None
             except Exception:
-                return f"{Color.red + Color.bold}Error: Invalid Equation{Color.end}", None
+                return f"⚠️ {Color.red + Color.bold}Error: Invalid Equation{Color.end}", None
 
 class Color:
     
