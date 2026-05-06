@@ -3,26 +3,30 @@ from calculator_equations import ProperOperands
 from calculator_equations import EvaluateEquation
 from calculator_equations import Color
 
+print(f"\n{Color.cyan + Color.bold + Color.underline}{"-"*20}A SCIENTIFIC CALCULATOR{"-"*20}{Color.end}")
+print(f"{Color.bold}OPERATIONS AVAILABLE: [+, -, x, /, ^, sqrt, ln, log, e, pi, sin, cos, tan, arcsin, arccos, arctan]{Color.end}")
+print(f"""
+    {Color.green}Please Use These Symbols Equivalent to the Operations Above: {Color.end}
+    1. {Color.bold}+{Color.end}             : Addition              10. {Color.bold}pi{Color.end}       : Pi Constant
+    2. {Color.bold}-{Color.end}             : Subtraction           11. {Color.bold}sin(x){Color.end}   : Sine Function
+    3. {Color.bold}x or X or *{Color.end}   : Multiplication        12. {Color.bold}cos(x){Color.end}   : Cosine Function
+    4. {Color.bold}/{Color.end}             : Division              13. {Color.bold}tan(x){Color.end}   : Tangent Function
+    5. {Color.bold}^{Color.end}             : Exponent              14. {Color.bold}asin(x){Color.end}  : Inverse Sin Function
+    6. {Color.bold}sqrt(x){Color.end}       : Square Root           15. {Color.bold}acos(x){Color.end}  : Inverse Cosine Function
+    7. {Color.bold}ln(x){Color.end}         : Natural Logarithm     16. {Color.bold}atan(x){Color.end}  : Inverse Tangent Function
+    8. {Color.bold}log(x, base){Color.end}  : Logarithm with Base
+    9. {Color.bold}e{Color.end}             : Euler's Constant
+    
+    Note: (x) is the number you want to input.
+    """)
+
 while True:
-    print(f"{Color.cyan + Color.bold + Color.underline}{"-"*12}A SCIENTIFIC CALCULATOR{"-"*12}{Color.end}")
-    print(f"{Color.bold}OPERATIONS AVAILABLE: [+, -, x, /, ^, sqrt, ln, log, e, pi, sin, cos, tan, arcsin, arccos, arctan]{Color.end}")
-    print(f"""
-        {Color.green}Please Use These Symbols Equivalent to the Operation Above: {Color.end}
-        1. + : Addition                     10. pi : Pi Constant
-        2. - : Subtraction                  11. sin : Sine Function
-        3. x or X or * : Multiplication     12. cos : Cosine Function
-        4. / : Division                     13. tan : Tangent Function
-        5. ^ : Exponent                     14. asin : Inverse Sin Function
-        6. sqrt : Square Root               15. acos : Inverse Cosine Function
-        7. ln : Natural Logarithm           16. atan : Inverse Tangent Function
-        8. log : Logarithm with Base
-        9. e : Euler's Constant
-        Note: (x) is the number you want to input.
-        """)
+    
+    print(f"Enter {Color.red + Color.bold}Quit{Color.end} or {Color.red + Color.bold}Exit{Color.end} to Halt the Program.")
     user_input = input(f"{Color.yellow + Color.bold}Enter Equation Here >>> {Color.end}")
     
-    if user_input == "Break":
-        print("Thank You For Using the Program!")
+    if user_input.strip().title() == "Quit" or user_input.strip().title() == "Exit":
+        print(f"{Color.green + Color.bold}Thank You For Using the Program!{Color.end}")
         break
     else:
         user_input = InputEquation(user_input)
@@ -39,11 +43,11 @@ while True:
             try:
                 if result % 1 == 0:
                     result = str(result)
-                    print(f"{Color.green + Color.bold}RESULT: {Color.end}", f"{Color.purple + Color.bold}{result}{Color.end}")
+                    print(f"{Color.green + Color.bold}RESULT: {Color.end}", f"{Color.purple + Color.bold}{result}{Color.end}\n")
                 else:
                     result = str(result)
                     rounded_result = str(rounded_result)
                     print(f"{Color.green + Color.bold}RESULT: {Color.end}", f"{Color.purple + Color.bold}{result}{Color.end}")
-                    print(f"{Color.blue + Color.bold}ROUNDED RESULT: {Color.end}", f"{Color.purple + Color.bold}{rounded_result}{Color.end}")
+                    print(f"{Color.blue + Color.bold}ROUNDED RESULT: {Color.end}", f"{Color.purple + Color.bold}{rounded_result}{Color.end}\n")
             except Exception as e:
                 print(f"{Color.red + Color.bold}Invalid Input {e}{Color.end}")
